@@ -1,5 +1,7 @@
 # Welcome to your Lovable project
 
+<!-- Updated for Vercel deployment -->
+
 ## Project info
 
 **URL**: https://lovable.dev/projects/d7affc63-edba-495a-80e0-76df5fadda93
