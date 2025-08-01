@@ -1,7 +1,8 @@
-import { Coffee, Code, Mail, Github, Linkedin, Twitter, ArrowRight } from 'lucide-react';
+import { Mail, Github, Linkedin, Twitter, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import logoImage from '@/assets/coffeandcooding.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -41,10 +42,11 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-1">
               <Link to="/" className="flex items-center space-x-2 mb-6">
-                <div className="flex items-center space-x-1">
-                  <Coffee className="h-8 w-8 text-cream" />
-                  <Code className="h-6 w-6 text-code-violet" />
-                </div>
+                <img 
+                  src={logoImage} 
+                  alt="CoffeeandCoding Logo" 
+                  className="h-12 w-auto" 
+                />
                 <span className="text-xl font-poppins font-bold">
                   CoffeeandCoding
                 </span>
@@ -128,7 +130,7 @@ const Footer = () => {
                   placeholder="Your email"
                   className="bg-cream/10 border-cream/20 text-cream placeholder:text-cream/60"
                 />
-                <Button size="sm" className="bg-code-violet hover:bg-code-violet/90">
+                <Button size="sm" className="btn-hero">
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </div>

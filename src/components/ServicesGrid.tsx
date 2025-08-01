@@ -1,5 +1,14 @@
-import { GraduationCap, ShoppingCart, User, Building, Server, Database } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import { 
+  Globe, 
+  ShoppingCart, 
+  GraduationCap, 
+  User,
+  Building, 
+  Server, 
+  Database 
+} from 'lucide-react';
 
 const ServicesGrid = () => {
   const services = [
@@ -101,12 +110,14 @@ const ServicesGrid = () => {
               </ul>
 
               {/* CTA */}
-              <Button 
-                variant="outline" 
-                className="w-full group-hover:bg-accent group-hover:text-accent-foreground group-hover:border-accent transition-all"
-              >
-                {service.cta}
-              </Button>
+              <Link to="/contact">
+                <Button 
+                  variant="outline" 
+                  className="w-full btn-outline-hero"
+                >
+                  {service.cta}
+                </Button>
+              </Link>
             </div>
           );
         })}
@@ -121,9 +132,11 @@ const ServicesGrid = () => {
           <p className="text-muted-foreground mb-6">
             Don't see exactly what you're looking for? We specialize in custom solutions tailored to your unique requirements.
           </p>
-          <Button className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            Discuss Your Project
-          </Button>
+          <Link to="/contact">
+            <Button className="btn-hero">
+              Discuss Your Project
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

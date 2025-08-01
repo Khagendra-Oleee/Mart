@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Code, Coffee } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logoImage from '@/assets/coffeandcooding.png';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const navItems = [
-    { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
     { href: '/services', label: 'Services' },
     { href: '/portfolio', label: 'Portfolio' },
@@ -22,23 +22,24 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="flex items-center space-x-1">
-              <Coffee className="h-8 w-8 text-coffee-brown group-hover:text-accent transition-colors" />
-              <Code className="h-6 w-6 text-accent group-hover:text-coffee-brown transition-colors" />
-            </div>
+          <Link to="/" className="flex items-center space-x-2 group -ml-8">
+            <img 
+              src={logoImage} 
+              alt="CoffeeandCoding Logo" 
+              className="h-12 w-auto transition-transform group-hover:scale-105" 
+            />
             <span className="text-xl font-poppins font-bold text-gradient">
               CoffeeandCoding
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2 translate-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 to={item.href}
-                className={`font-medium transition-colors link-animated ${
+                className={`font-medium transition-all duration-200 link-animated-nav ${
                   isActive(item.href)
                     ? 'text-accent'
                     : 'text-foreground hover:text-accent'
@@ -47,9 +48,15 @@ const Navigation = () => {
                 {item.label}
               </Link>
             ))}
-            <Button className="btn-hero">
-              Get Quote
-            </Button>
+          </div>
+
+          {/* CTA Button */}
+          <div className="hidden md:block">
+            <Link to="/portfolio">
+              <Button className="btn-hero">
+                View Portfolio
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -82,9 +89,11 @@ const Navigation = () => {
                 </Link>
               ))}
               <div className="px-3 py-2">
-                <Button className="btn-hero w-full">
-                  Get Quote
-                </Button>
+                <Link to="/portfolio" onClick={() => setIsOpen(false)}>
+                  <Button className="btn-hero w-full">
+                    View Portfolio
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

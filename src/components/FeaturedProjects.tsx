@@ -1,6 +1,7 @@
-import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Link } from 'react-router-dom';
+import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 
 const FeaturedProjects = () => {
   const projects = [
@@ -63,7 +64,7 @@ const FeaturedProjects = () => {
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className="project-card"
+              className="project-card group"
               style={{
                 animationDelay: `${index * 0.2}s`,
                 animation: 'fadeInUp 0.8s ease-out forwards',
@@ -115,11 +116,11 @@ const FeaturedProjects = () => {
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-semibold text-primary mb-3 group-hover:text-accent transition-colors">
+                <h3 className="text-2xl font-semibold text-primary mb-3 group-hover:text-accent transition-all duration-300 ease-out">
                   {project.title}
                 </h3>
 
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-muted-foreground mb-6 leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
                   {project.description}
                 </p>
 
@@ -132,10 +133,14 @@ const FeaturedProjects = () => {
                     ))}
                   </div>
                   
-                  <Button variant="ghost" className="text-accent hover:text-accent/80 p-0">
-                    View Case Study
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Button>
+                  <Link to="/portfolio">
+                    <Button variant="ghost" className="btn-case-study group">
+                      <span className="flex items-center">
+                        View Case Study
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      </span>
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -144,10 +149,12 @@ const FeaturedProjects = () => {
 
         {/* View All Projects CTA */}
         <div className="text-center">
-          <Button className="btn-outline-hero">
-            View All Projects
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <Link to="/portfolio">
+            <Button className="btn-outline-hero">
+              View All Projects
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

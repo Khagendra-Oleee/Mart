@@ -129,7 +129,7 @@ const ContactForm = () => {
 
         <Button
           type="submit"
-          className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+          className="w-full btn-hero"
           disabled={isSubmitting}
         >
           {isSubmitting ? (

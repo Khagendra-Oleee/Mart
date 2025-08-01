@@ -1,5 +1,6 @@
 import { ExternalLink, Github, GraduationCap, ShoppingCart, User, Building } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const PortfolioGrid = () => {
   const projects = [
@@ -114,9 +115,11 @@ const PortfolioGrid = () => {
                   ))}
                 </ul>
 
-                <Button variant="outline" className="w-full group-hover:bg-accent group-hover:text-accent-foreground transition-all">
-                  View Case Study
-                </Button>
+                <Link to="/portfolio">
+                  <Button variant="outline" className="w-full btn-outline-hero">
+                    View Case Study
+                  </Button>
+                </Link>
               </div>
             </div>
           );
