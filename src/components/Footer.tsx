@@ -47,7 +47,7 @@ const Footer = () => {
                   alt="CoffeeandCoding Logo" 
                   className="h-12 w-auto" 
                 />
-                <span className="text-xl font-poppins font-bold">
+                <span className="text-lg font-poppins font-bold">
                   CoffeeandCoding
                 </span>
               </Link>

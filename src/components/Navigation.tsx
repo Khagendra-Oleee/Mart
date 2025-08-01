@@ -28,7 +28,7 @@ const Navigation = () => {
               alt="CoffeeandCoding Logo" 
               className="h-12 w-auto transition-transform group-hover:scale-105" 
             />
-            <span className="text-xl font-poppins font-bold text-gradient">
+            <span className="text-lg font-poppins font-bold text-gradient">
               CoffeeandCoding
             </span>
           </Link>

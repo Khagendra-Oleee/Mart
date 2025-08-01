@@ -60,7 +60,7 @@ const FeaturedProjects = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
           {projects.map((project, index) => (
             <div
               key={project.id}
@@ -72,7 +72,7 @@ const FeaturedProjects = () => {
               }}
             >
               {/* Project Image */}
-              <div className="relative h-64 bg-gradient-to-br from-accent/20 to-coffee-brown/20 flex items-center justify-center">
+              <div className="relative h-64 bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
                 <div className="text-6xl opacity-20">
                   {project.category === 'Education' && '🎓'}
                   {project.category === 'Business' && '🛒'}
@@ -80,31 +80,35 @@ const FeaturedProjects = () => {
                   {project.category === 'Enterprise' && '🏢'}
                 </div>
                 
+
+                
                 {/* Overlay with links */}
-                <div className="absolute inset-0 bg-coffee-brown/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-indigo-700/20 flex items-center justify-center space-x-2 sm:space-x-4 p-4 group-hover:bg-gradient-to-br group-hover:from-blue-600/95 group-hover:to-indigo-700/95 transition-all duration-300">
                   <Button
                     variant="outline"
                     size="sm"
-                    className="text-white border-white hover:bg-white hover:text-coffee-brown"
+                    className="text-blue-600 border-blue-600 bg-white/90 backdrop-blur-sm hover:bg-white hover:text-blue-600 text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-2 transition-all duration-200 shadow-lg"
                   >
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Live Demo
+                    <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+                    <span className="hidden sm:inline">Live Demo</span>
+                    <span className="sm:hidden">Demo</span>
                   </Button>
                   <Button
                     variant="outline"
                     size="sm"
-                    className="text-white border-white hover:bg-white hover:text-coffee-brown"
+                    className="text-blue-600 border-blue-600 bg-white/90 backdrop-blur-sm hover:bg-white hover:text-blue-600 text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-2 transition-all duration-200 shadow-lg"
                   >
-                    <Github className="h-4 w-4 mr-2" />
-                    Code
+                    <Github className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+                    <span className="hidden sm:inline">Code</span>
+                    <span className="sm:hidden">Git</span>
                   </Button>
                 </div>
               </div>
 
               {/* Project Content */}
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <Badge variant="secondary" className="text-accent">
+              <div className="p-4 sm:p-6">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3 gap-2 sm:gap-0">
+                  <Badge variant="secondary" className="text-accent text-xs sm:text-sm">
                     {project.category}
                   </Badge>
                   <div className="flex flex-wrap gap-1">
@@ -124,7 +128,7 @@ const FeaturedProjects = () => {
                   {project.description}
                 </p>
 
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-2">
                   <div className="flex flex-wrap gap-1">
                     {project.tags.slice(2).map((tag) => (
                       <Badge key={tag} variant="outline" className="text-xs">
@@ -133,10 +137,11 @@ const FeaturedProjects = () => {
                     ))}
                   </div>
                   
-                  <Link to="/portfolio">
-                    <Button variant="ghost" className="btn-case-study group">
-                      <span className="flex items-center">
-                        View Case Study
+                  <Link to="/portfolio" className="w-full sm:w-auto">
+                    <Button variant="ghost" className="btn-case-study group w-full sm:w-auto text-sm sm:text-base">
+                      <span className="flex items-center justify-center sm:justify-start">
+                        <span className="hidden sm:inline">View Case Study</span>
+                        <span className="sm:hidden">Case Study</span>
                         <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                       </span>
                     </Button>

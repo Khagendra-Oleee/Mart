@@ -10,6 +10,8 @@
   :root {
     /* Brand Colors */
     --coffee-brown: 25 45% 13%;
+  --professional-blue: 220 100% 50%;
+  --professional-indigo: 240 100% 60%;
     --cream: 45 50% 95%;
     --code-violet: 257 91% 61%;
     --coffee-light: 25 25% 25%;
@@ -45,14 +47,14 @@
     --ring: 257 91% 61%;
 
     /* Custom Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--coffee-brown)), hsl(var(--coffee-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--professional-blue)), hsl(var(--professional-indigo)));
     --gradient-accent: linear-gradient(135deg, hsl(var(--code-violet)), hsl(257 91% 71%));
     --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--cream-warm)));
     
     /* Shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--coffee-brown) / 0.15);
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--professional-blue) / 0.15);
     --shadow-glow: 0 0 40px hsl(var(--code-violet) / 0.2);
-    --shadow-card: 0 4px 20px -2px hsl(var(--coffee-brown) / 0.08);
+    --shadow-card: 0 4px 20px -2px hsl(var(--professional-blue) / 0.08);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
