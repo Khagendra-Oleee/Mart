@@ -14,7 +14,7 @@ const About = () => {
           <div className="container mx-auto px-4">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="text-5xl font-bold text-primary mb-6">
-                About Mart
+                About CoffeeandCoding
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
                 We help businesses and institutions go digital through expertly crafted websites using modern technology stacks. Founded on the belief that great coffee and great code go hand in hand.

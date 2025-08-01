@@ -25,11 +25,11 @@ const Navigation = () => {
           <Link to="/" className="flex items-center space-x-2 group -ml-8">
             <img 
               src={logoImage} 
-              alt="Mart Logo" 
+              alt="CoffeeandCoding Logo" 
               className="h-12 w-auto transition-transform group-hover:scale-105" 
             />
             <span className="text-xl font-poppins font-bold text-gradient">
-              Mart
+              CoffeeandCoding
             </span>
           </Link>
 

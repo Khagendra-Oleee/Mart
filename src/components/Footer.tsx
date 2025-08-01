@@ -44,11 +44,11 @@ const Footer = () => {
               <Link to="/" className="flex items-center space-x-2 mb-6">
                 <img 
                   src={logoImage} 
-                  alt="Mart Logo" 
+                  alt="CoffeeandCoding Logo" 
                   className="h-12 w-auto" 
                 />
                 <span className="text-xl font-poppins font-bold">
-                  Mart
+                  CoffeeandCoding
                 </span>
               </Link>
               
@@ -156,7 +156,7 @@ const Footer = () => {
         <div className="border-t border-cream/20 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-cream/80 text-sm mb-4 md:mb-0">
-              © {currentYear} Mart. All rights reserved.
+              © {currentYear} CoffeeandCoding. All rights reserved.
             </div>
             
             <div className="flex space-x-6 text-sm">
