@@ -2,7 +2,7 @@ import { Mail, Github, Linkedin, Twitter, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import logoImage from '@/assets/coffeandcooding.png';
+import logoImage from '@/assets/logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -44,11 +44,11 @@ const Footer = () => {
               <Link to="/" className="flex items-center space-x-2 mb-6">
                 <img 
                   src={logoImage} 
-                  alt="CoffeeandCoding Logo" 
+                  alt="Mart Logo" 
                   className="h-12 w-auto" 
                 />
                 <span className="text-xl font-poppins font-bold">
-                  CoffeeandCoding
+                  Mart
                 </span>
               </Link>
               
@@ -156,7 +156,7 @@ const Footer = () => {
         <div className="border-t border-cream/20 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-cream/80 text-sm mb-4 md:mb-0">
-              © {currentYear} CoffeeandCoding. All rights reserved.
+              © {currentYear} Mart. All rights reserved.
             </div>
             
             <div className="flex space-x-6 text-sm">

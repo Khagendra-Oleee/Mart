@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import logoImage from '@/assets/coffeandcooding.png';
+import logoImage from '@/assets/logo.png';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,11 +25,11 @@ const Navigation = () => {
           <Link to="/" className="flex items-center space-x-2 group -ml-8">
             <img 
               src={logoImage} 
-              alt="CoffeeandCoding Logo" 
+              alt="Mart Logo" 
               className="h-12 w-auto transition-transform group-hover:scale-105" 
             />
             <span className="text-xl font-poppins font-bold text-gradient">
-              CoffeeandCoding
+              Mart
             </span>
           </Link>
 
