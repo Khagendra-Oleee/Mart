@@ -48,15 +48,18 @@ const FeaturedProjects = () => {
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-primary mb-6">
-            Featured Projects
+        <div className="text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-slate-800 via-blue-700 to-indigo-700 bg-clip-text text-transparent">
+              Featured Projects
+            </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Explore our recent work across different industries and platforms. 
-            Each project showcases our commitment to quality and innovation.
+          <p className="text-xl sm:text-2xl text-slate-600 max-w-4xl mx-auto font-medium leading-relaxed">
+            Explore our recent work across different industries and platforms.
+            Each project showcases our commitment to
+            <span className="text-blue-700 font-semibold"> quality and innovation</span>.
           </p>
         </div>
 
@@ -71,74 +74,75 @@ const FeaturedProjects = () => {
                 opacity: 0,
               }}
             >
-              {/* Project Image */}
-              <div className="relative h-64 bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
-                <div className="text-6xl opacity-20">
+              {/* Enhanced Project Image */}
+              <div className="relative h-72 bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100 flex items-center justify-center overflow-hidden">
+                <div className="text-8xl opacity-15 filter grayscale">
                   {project.category === 'Education' && '🎓'}
                   {project.category === 'Business' && '🛒'}
                   {project.category === 'Personal' && '👤'}
                   {project.category === 'Enterprise' && '🏢'}
                 </div>
                 
-
+                {/* Professional overlay pattern */}
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/10 to-blue-100/30"></div>
                 
-                {/* Overlay with links */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-indigo-700/20 flex items-center justify-center space-x-2 sm:space-x-4 p-4 group-hover:bg-gradient-to-br group-hover:from-blue-600/95 group-hover:to-indigo-700/95 transition-all duration-300">
+                {/* Enhanced Overlay with links */}
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-900/10 to-blue-900/10 flex items-center justify-center space-x-3 sm:space-x-4 p-4 opacity-0 group-hover:opacity-100 group-hover:bg-gradient-to-br group-hover:from-slate-900/95 group-hover:to-blue-900/95 transition-all duration-500">
                   <Button
                     variant="outline"
                     size="sm"
-                    className="text-blue-600 border-blue-600 bg-white/90 backdrop-blur-sm hover:bg-white hover:text-blue-600 text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-2 transition-all duration-200 shadow-lg"
+                    className="text-white border-white/80 bg-white/10 backdrop-blur-md hover:bg-white hover:text-slate-900 text-sm px-4 py-2 transition-all duration-300 shadow-xl font-semibold"
                   >
-                    <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+                    <ExternalLink className="h-4 w-4 mr-2" />
                     <span className="hidden sm:inline">Live Demo</span>
                     <span className="sm:hidden">Demo</span>
                   </Button>
                   <Button
                     variant="outline"
                     size="sm"
-                    className="text-blue-600 border-blue-600 bg-white/90 backdrop-blur-sm hover:bg-white hover:text-blue-600 text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-2 transition-all duration-200 shadow-lg"
+                    className="text-white border-white/80 bg-black/80 backdrop-blur-md hover:bg-black hover:text-white text-sm px-4 py-2 transition-all duration-300 shadow-xl font-semibold"
                   >
-                    <Github className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+                    <Github className="h-4 w-4 mr-2" />
                     <span className="hidden sm:inline">Code</span>
                     <span className="sm:hidden">Git</span>
                   </Button>
                 </div>
               </div>
 
-              {/* Project Content */}
-              <div className="p-4 sm:p-6">
-                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3 gap-2 sm:gap-0">
-                  <Badge variant="secondary" className="text-accent text-xs sm:text-sm">
+              {/* Enhanced Project Content */}
+              <div className="p-6 sm:p-8">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-2 sm:gap-0">
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-700 text-sm font-semibold px-3 py-1">
                     {project.category}
                   </Badge>
-                  <div className="flex flex-wrap gap-1">
+                  <div className="flex flex-wrap gap-2">
                     {project.tags.slice(0, 2).map((tag) => (
-                      <Badge key={tag} variant="outline" className="text-xs">
+                      <Badge key={tag} variant="outline" className="text-xs border-slate-300 text-slate-600">
                         {tag}
                       </Badge>
                     ))}
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-semibold text-primary mb-3 group-hover:text-accent transition-all duration-300 ease-out">
+                <h3 className="text-2xl sm:text-3xl font-bold text-slate-800 mb-4 group-hover:text-blue-700 transition-all duration-300 ease-out">
                   {project.title}
                 </h3>
 
-                <p className="text-muted-foreground mb-6 leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
+                <p className="text-slate-600 mb-6 leading-relaxed font-medium text-lg group-hover:text-slate-700 transition-colors duration-300">
                   {project.description}
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-2">
-                  <div className="flex flex-wrap gap-1">
+                  <div className="flex flex-wrap gap-2">
                     {project.tags.slice(2).map((tag) => (
-                      <Badge key={tag} variant="outline" className="text-xs">
+                      <Badge key={tag} variant="outline" className="text-xs border-slate-300 text-slate-600">
                         {tag}
                       </Badge>
                     ))}
                   </div>
                   
                   <Link to="/portfolio" className="w-full sm:w-auto">
-                    <Button variant="ghost" className="btn-case-study group w-full sm:w-auto text-sm sm:text-base">
+                    <Button variant="ghost" className="text-blue-700 hover:text-white hover:bg-blue-700 px-4 py-2 rounded-xl font-semibold transition-all duration-300 hover:scale-105 group w-full sm:w-auto text-sm sm:text-base">
                       <span className="flex items-center justify-center sm:justify-start">
                         <span className="hidden sm:inline">View Case Study</span>
                         <span className="sm:hidden">Case Study</span>
@@ -152,12 +156,12 @@ const FeaturedProjects = () => {
           ))}
         </div>
 
-        {/* View All Projects CTA */}
+        {/* Enhanced View All Projects CTA */}
         <div className="text-center">
           <Link to="/portfolio">
-            <Button className="btn-outline-hero">
+            <Button className="border-2 border-slate-300 hover:border-blue-500 text-slate-700 hover:text-blue-700 bg-white/80 backdrop-blur-sm hover:bg-blue-50 text-lg px-10 py-5 rounded-2xl font-semibold shadow-lg hover:shadow-xl hover:shadow-slate-200 transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-1">
               View All Projects
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-3 h-5 w-5" />
             </Button>
           </Link>
         </div>

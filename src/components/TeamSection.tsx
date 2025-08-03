@@ -78,8 +78,8 @@ const TeamSection = () => {
   return (
     <div className="max-w-7xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-primary mb-6">Meet Our Team</h2>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+        <h2 className="text-4xl font-bold text-slate-800 mb-6">Meet Our Team</h2>
+        <p className="text-xl text-slate-600 max-w-3xl mx-auto">
           Our diverse team of developers, designers, and digital strategists work together to bring your vision to life. 
           We're passionate about what we do and it shows in every project.
         </p>
@@ -92,22 +92,22 @@ const TeamSection = () => {
           return (
             <div
               key={index}
-              className="group bg-card border border-border rounded-2xl p-6 text-center hover:shadow-card hover:-translate-y-2 transition-all duration-300"
+              className="group bg-white border border-slate-200 rounded-2xl p-8 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
               {/* Profile Icon */}
-              <div className="inline-flex p-4 bg-accent/10 rounded-xl mb-6 group-hover:bg-accent/20 transition-colors">
-                <Icon className="w-8 h-8 text-accent" />
+              <div className="inline-flex p-4 bg-gradient-to-r from-slate-600 to-slate-700 rounded-xl mb-6 group-hover:from-slate-700 group-hover:to-slate-800 transition-all duration-300 shadow-md">
+                <Icon className="w-8 h-8 text-white" />
               </div>
 
               {/* Member Info */}
-              <h3 className="text-xl font-bold text-primary mb-2 group-hover:text-accent transition-colors">
+              <h3 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-slate-700 transition-colors">
                 {member.name}
               </h3>
               
-              <p className="text-accent font-medium mb-2">{member.role}</p>
-              <p className="text-sm text-muted-foreground mb-4">{member.specialty}</p>
+              <p className="text-slate-600 font-medium mb-2">{member.role}</p>
+              <p className="text-sm text-slate-500 mb-4">{member.specialty}</p>
               
-              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-sm text-slate-600 mb-6 leading-relaxed">
                 {member.description}
               </p>
 
@@ -116,7 +116,7 @@ const TeamSection = () => {
                 {member.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="bg-primary/10 text-primary px-2 py-1 rounded text-xs"
+                    className="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-medium"
                   >
                     {skill}
                   </span>
@@ -127,7 +127,7 @@ const TeamSection = () => {
               <div className="flex justify-center space-x-3">
                 <a
                   href={member.social.github}
-                  className="p-2 bg-muted rounded-lg hover:bg-accent hover:text-white transition-colors"
+                  className="p-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -135,7 +135,7 @@ const TeamSection = () => {
                 </a>
                 <a
                   href={member.social.linkedin}
-                  className="p-2 bg-muted rounded-lg hover:bg-accent hover:text-white transition-colors"
+                  className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -143,7 +143,7 @@ const TeamSection = () => {
                 </a>
                 <a
                   href={`mailto:${member.social.email}`}
-                  className="p-2 bg-muted rounded-lg hover:bg-accent hover:text-white transition-colors"
+                  className="p-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
                 >
                   <Mail className="w-4 h-4" />
                 </a>
@@ -154,19 +154,19 @@ const TeamSection = () => {
       </div>
 
       {/* Core Values */}
-      <div className="bg-gradient-subtle rounded-2xl p-12">
+      <div className="bg-gradient-to-r from-slate-50 to-gray-50 rounded-2xl p-12 border border-slate-200">
         <div className="text-center mb-12">
-          <h3 className="text-3xl font-bold text-primary mb-4">Our Core Values</h3>
-          <p className="text-lg text-muted-foreground">
+          <h3 className="text-3xl font-bold text-slate-800 mb-4">Our Core Values</h3>
+          <p className="text-lg text-slate-600">
             These principles guide everything we do and every decision we make.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {coreValues.map((value, index) => (
-            <div key={index} className="text-center">
-              <h4 className="text-xl font-bold text-primary mb-3">{value.title}</h4>
-              <p className="text-muted-foreground leading-relaxed">{value.description}</p>
+            <div key={index} className="text-center bg-white rounded-xl p-6 shadow-sm border border-slate-100">
+              <h4 className="text-xl font-bold text-slate-800 mb-3">{value.title}</h4>
+              <p className="text-slate-600 leading-relaxed">{value.description}</p>
             </div>
           ))}
         </div>

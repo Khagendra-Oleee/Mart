@@ -62,10 +62,10 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-card p-8 rounded-2xl shadow-card border border-border">
+    <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-200">
       <div className="mb-8">
-        <h2 className="text-3xl font-bold text-primary mb-4">Get In Touch</h2>
-        <p className="text-muted-foreground">
+        <h2 className="text-3xl font-bold text-slate-800 mb-4">Get In Touch</h2>
+        <p className="text-slate-600">
           Ready to start your project? Fill out the form below and we'll get back to you within 24 hours.
         </p>
       </div>
@@ -73,80 +73,80 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div className="grid md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <Label htmlFor="name">Full Name *</Label>
+            <Label htmlFor="name" className="text-slate-700 font-medium">Full Name *</Label>
             <Input
               id="name"
               {...register('name')}
               placeholder="Your full name"
-              className={errors.name ? 'border-destructive' : ''}
+              className={`border-slate-300 focus:border-blue-500 focus:ring-blue-500 ${errors.name ? 'border-red-500' : ''}`}
             />
             {errors.name && (
-              <p className="text-sm text-destructive">{errors.name.message}</p>
+              <p className="text-sm text-red-600">{errors.name.message}</p>
             )}
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email">Email Address *</Label>
+            <Label htmlFor="email" className="text-slate-700 font-medium">Email Address *</Label>
             <Input
               id="email"
               type="email"
               {...register('email')}
               placeholder="your.email@example.com"
-              className={errors.email ? 'border-destructive' : ''}
+              className={`border-slate-300 focus:border-blue-500 focus:ring-blue-500 ${errors.email ? 'border-red-500' : ''}`}
             />
             {errors.email && (
-              <p className="text-sm text-destructive">{errors.email.message}</p>
+              <p className="text-sm text-red-600">{errors.email.message}</p>
             )}
           </div>
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="subject">Subject *</Label>
+          <Label htmlFor="subject" className="text-slate-700 font-medium">Subject *</Label>
           <Input
             id="subject"
             {...register('subject')}
-            placeholder="What's your project about?"
-            className={errors.subject ? 'border-destructive' : ''}
+            placeholder="What's this about?"
+            className={`border-slate-300 focus:border-blue-500 focus:ring-blue-500 ${errors.subject ? 'border-red-500' : ''}`}
           />
           {errors.subject && (
-            <p className="text-sm text-destructive">{errors.subject.message}</p>
+            <p className="text-sm text-red-600">{errors.subject.message}</p>
           )}
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="message">Message *</Label>
+          <Label htmlFor="message" className="text-slate-700 font-medium">Message *</Label>
           <Textarea
             id="message"
             {...register('message')}
-            placeholder="Tell us about your project requirements, timeline, and any specific features you need..."
+            placeholder="Tell us about your project..."
             rows={6}
-            className={errors.message ? 'border-destructive' : ''}
+            className={`border-slate-300 focus:border-blue-500 focus:ring-blue-500 resize-none ${errors.message ? 'border-red-500' : ''}`}
           />
           {errors.message && (
-            <p className="text-sm text-destructive">{errors.message.message}</p>
+            <p className="text-sm text-red-600">{errors.message.message}</p>
           )}
         </div>
 
         <Button
           type="submit"
-          className="w-full btn-hero"
           disabled={isSubmitting}
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? (
-            <>
-              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
-              Sending Message...
-            </>
+            <div className="flex items-center justify-center">
+              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+              Sending...
+            </div>
           ) : isSubmitted ? (
-            <>
-              <CheckCircle className="w-4 h-4 mr-2" />
+            <div className="flex items-center justify-center">
+              <CheckCircle className="w-5 h-5 mr-2" />
               Message Sent!
-            </>
+            </div>
           ) : (
-            <>
-              <Send className="w-4 h-4 mr-2" />
+            <div className="flex items-center justify-center">
+              <Send className="w-5 h-5 mr-2" />
               Send Message
-            </>
+            </div>
           )}
         </Button>
       </form>
