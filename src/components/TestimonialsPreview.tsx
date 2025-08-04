@@ -126,7 +126,7 @@ const TestimonialsPreview = () => {
                 variant="outline"
                 size="sm"
                 onClick={prevTestimonial}
-                className="rounded-full w-12 h-12 p-0 border-2 border-slate-300 hover:border-blue-500 hover:bg-blue-50 transition-all duration-300"
+                className="rounded-full w-12 h-12 p-0 border-2 border-slate-300 hover:border-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 <ChevronLeft className="h-5 w-5" />
               </Button>
@@ -148,7 +148,7 @@ const TestimonialsPreview = () => {
                 variant="outline"
                 size="sm"
                 onClick={nextTestimonial}
-                className="rounded-full w-12 h-12 p-0 border-2 border-slate-300 hover:border-blue-500 hover:bg-blue-50 transition-all duration-300"
+                className="rounded-full w-12 h-12 p-0 border-2 border-slate-300 hover:border-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 <ChevronRight className="h-5 w-5" />
               </Button>

@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { 
@@ -9,8 +10,20 @@ import {
   Server, 
   Database 
 } from 'lucide-react';
+import LoadingSkeleton from './LoadingSkeleton';
 
 const ServicesGrid = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time for better UX
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 600);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const services = [
     {
       icon: GraduationCap,
@@ -68,6 +81,19 @@ const ServicesGrid = () => {
     },
   ];
 
+  if (isLoading) {
+    return (
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+        <div className="text-center mb-12 sm:mb-16">
+          <LoadingSkeleton type="text" count={1} />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
+          <LoadingSkeleton type="card" count={6} />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
       <div className="text-center mb-12 sm:mb-16">
@@ -83,61 +109,49 @@ const ServicesGrid = () => {
           return (
             <div
               key={index}
-              className="group bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
+              className="group bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl hover:-translate-y-3 hover:border-blue-200 transition-all duration-500 ease-out cursor-pointer relative overflow-hidden"
             >
+              {/* Subtle background gradient on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-indigo-50/0 group-hover:from-blue-50/30 group-hover:to-indigo-50/20 transition-all duration-500 ease-out" />
+              
               {/* Icon */}
-              <div className={`inline-flex p-3 sm:p-4 rounded-xl bg-gradient-to-br ${service.gradient} mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <Icon className={`w-6 sm:w-8 h-6 sm:h-8 ${service.iconColor}`} />
+              <div className={`relative inline-flex p-3 sm:p-4 rounded-xl bg-gradient-to-br ${service.gradient} mb-4 sm:mb-6 group-hover:scale-110 group-hover:shadow-lg transition-all duration-500 ease-out`}>
+                <Icon className={`w-6 sm:w-8 h-6 sm:h-8 ${service.iconColor} group-hover:scale-110 transition-transform duration-300`} />
               </div>
 
               {/* Content */}
-              <h3 className="text-xl sm:text-2xl font-bold text-slate-800 mb-3 sm:mb-4 group-hover:text-blue-600 transition-colors duration-300">
-                {service.title}
-              </h3>
-              
-              <p className="text-sm sm:text-base text-slate-600 mb-4 sm:mb-6 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
-                {service.description}
-              </p>
+              <div className="relative">
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-800 mb-3 sm:mb-4 group-hover:text-blue-700 group-hover:translate-x-1 transition-all duration-300">
+                  {service.title}
+                </h3>
+                
+                <p className="text-sm sm:text-base text-slate-600 mb-4 sm:mb-6 leading-relaxed group-hover:text-slate-800 transition-colors duration-300">
+                  {service.description}
+                </p>
 
-              {/* Features */}
-              <ul className="space-y-2 mb-6 sm:mb-8">
-                {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-xs sm:text-sm text-slate-600 group-hover:text-slate-700 transition-colors duration-300">
-                    <div className="w-1.5 h-1.5 bg-slate-400 rounded-full mr-3 flex-shrink-0 group-hover:bg-blue-500 transition-colors duration-300" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+                {/* Features */}
+                <ul className="space-y-2 mb-6 sm:mb-8">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center text-xs sm:text-sm text-slate-600 group-hover:text-slate-700 transition-all duration-300 group-hover:translate-x-1">
+                      <div className="w-1.5 h-1.5 bg-slate-400 rounded-full mr-3 flex-shrink-0 group-hover:bg-blue-500 group-hover:scale-125 transition-all duration-300" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
 
-              {/* CTA */}
-              <Link to="/contact">
-                <Button
-                  variant="outline"
-                  className="w-full border-slate-300 text-slate-700 hover:bg-blue-600 hover:text-white hover:border-blue-600 text-sm sm:text-base py-2 sm:py-3 transition-all duration-300 group-hover:shadow-md"
-                >
-                  {service.cta}
-                </Button>
-              </Link>
+                {/* CTA */}
+                <Link to="/contact">
+                  <Button
+                    variant="outline"
+                    className="relative w-full border-slate-300 text-slate-700 hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-600 hover:text-white hover:border-transparent text-sm sm:text-base py-2 sm:py-3 transition-all duration-500 ease-out group-hover:shadow-lg group-hover:scale-105 group-hover:-translate-y-1"
+                  >
+                    {service.cta}
+                  </Button>
+                </Link>
+              </div>
             </div>
           );
         })}
-      </div>
-
-      {/* Bottom CTA */}
-      <div className="text-center mt-12 sm:mt-16">
-        <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto shadow-sm">
-          <h3 className="text-xl sm:text-2xl font-bold text-slate-800 mb-3 sm:mb-4">
-            Need Something Custom?
-          </h3>
-          <p className="text-sm sm:text-base text-slate-600 mb-4 sm:mb-6 px-2 sm:px-0">
-            Don't see exactly what you're looking for? We specialize in custom solutions tailored to your unique requirements.
-          </p>
-          <Link to="/contact">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 transition-all duration-300 hover:shadow-lg">
-              Discuss Your Project
-            </Button>
-          </Link>
-        </div>
       </div>
     </div>
   );

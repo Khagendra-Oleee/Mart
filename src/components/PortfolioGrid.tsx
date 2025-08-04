@@ -1,8 +1,21 @@
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Github, GraduationCap, ShoppingCart, User, Building } from 'lucide-react';
+import LoadingSkeleton from './LoadingSkeleton';
 
 const PortfolioGrid = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time for better UX
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const projects = [
     {
       title: 'College Management System',
@@ -58,6 +71,16 @@ const PortfolioGrid = () => {
     }
   ];
 
+  if (isLoading) {
+    return (
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8">
+          <LoadingSkeleton type="card" count={2} />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="max-w-7xl mx-auto">
       <div className="grid lg:grid-cols-2 gap-8">
@@ -99,25 +122,29 @@ const PortfolioGrid = () => {
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((tech, techIndex) => (
-                    <span key={techIndex} className="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm font-medium">
+                    <span
+                      key={techIndex}
+                      className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium"
+                    >
                       {tech}
                     </span>
                   ))}
                 </div>
 
                 {/* Features */}
-                <ul className="space-y-1 mb-6 text-sm">
+                <div className="space-y-2 mb-6">
                   {project.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-slate-600 group-hover:text-slate-700 transition-colors duration-300">
-                      <div className="w-1.5 h-1.5 bg-slate-400 rounded-full mr-2 flex-shrink-0 group-hover:bg-blue-500 transition-colors duration-300" />
-                      {feature}
-                    </li>
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                      <span className="text-slate-600 text-sm">{feature}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
 
-                <Link to="/portfolio">
-                  <Button variant="outline" className="w-full border-slate-300 text-slate-700 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300 group-hover:shadow-md">
-                    View Case Study
+                {/* CTA Button */}
+                <Link to="/contact">
+                  <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-3 rounded-xl shadow-lg hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 border-0">
+                    Get Similar Project
                   </Button>
                 </Link>
               </div>

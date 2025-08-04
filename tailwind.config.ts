@@ -116,11 +116,65 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-slow': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.3'
+					}
+				},
+				'pulse-medium': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.5'
+					}
+				},
+				'pulse-high': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.7'
+					}
+				},
+				'shimmer': {
+					'0%': {
+						transform: 'translateX(-100%)'
+					},
+					'100%': {
+						transform: 'translateX(100%)'
+					}
+				},
+				'shimmer-slow': {
+					'0%': {
+						transform: 'translateX(-100%)'
+					},
+					'100%': {
+						transform: 'translateX(100%)'
+					}
+				},
+				'shimmer-medium': {
+					'0%': {
+						transform: 'translateX(-100%)'
+					},
+					'100%': {
+						transform: 'translateX(100%)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-slow': 'pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'pulse-medium': 'pulse-medium 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'pulse-high': 'pulse-high 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'shimmer': 'shimmer 2s infinite',
+				'shimmer-slow': 'shimmer-slow 4s infinite',
+				'shimmer-medium': 'shimmer-medium 3s infinite'
 			}
 		}
 	},

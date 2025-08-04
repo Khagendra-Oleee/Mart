@@ -37,8 +37,8 @@ const ValueStack = () => {
   return (
     <div className="max-w-7xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-primary mb-6">Why Choose CoffeeandCoding?</h2>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+        <h2 className="text-4xl font-bold text-slate-800 mb-6">Why Choose CoffeeandCoding?</h2>
+        <p className="text-xl text-slate-600 max-w-3xl mx-auto">
           We don't just build websites – we create digital experiences that drive results and grow with your business.
         </p>
       </div>
@@ -49,19 +49,19 @@ const ValueStack = () => {
           return (
             <div
               key={index}
-              className="group text-center p-8 rounded-2xl hover:bg-card hover:shadow-card transition-all duration-300"
+              className="group text-center p-8 rounded-2xl hover:bg-slate-50 hover:shadow-lg transition-all duration-300 cursor-pointer"
             >
               {/* Icon */}
-              <div className="inline-flex p-4 bg-accent/10 rounded-xl mb-6 group-hover:bg-accent/20 transition-colors">
-                <Icon className="w-8 h-8 text-accent" />
+              <div className="inline-flex p-4 bg-blue-100 rounded-xl mb-6 group-hover:bg-blue-200 transition-colors">
+                <Icon className="w-8 h-8 text-blue-600" />
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold text-primary mb-4 group-hover:text-accent transition-colors">
+              <h3 className="text-xl font-bold text-slate-800 mb-4 group-hover:text-blue-700 transition-colors">
                 {value.title}
               </h3>
               
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors">
                 {value.description}
               </p>
             </div>
@@ -70,25 +70,25 @@ const ValueStack = () => {
       </div>
 
       {/* Stats Section */}
-      <div className="mt-20 bg-gradient-accent rounded-2xl p-12 text-center text-white">
-        <h3 className="text-3xl font-bold mb-8">Trusted by Businesses Worldwide</h3>
+      <div className="mt-20 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-12 text-center">
+        <h3 className="text-3xl font-bold mb-8 text-slate-800">Trusted by Businesses Worldwide</h3>
         
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <div className="text-4xl font-bold mb-2">50+</div>
-            <div className="text-white/80">Projects Completed</div>
+            <div className="text-4xl font-bold mb-2 text-slate-800">50+</div>
+            <div className="text-slate-700 font-medium">Projects Completed</div>
           </div>
           <div>
-            <div className="text-4xl font-bold mb-2">100%</div>
-            <div className="text-white/80">Client Satisfaction</div>
+            <div className="text-4xl font-bold mb-2 text-slate-800">100%</div>
+            <div className="text-slate-700 font-medium">Client Satisfaction</div>
           </div>
           <div>
-            <div className="text-4xl font-bold mb-2">24h</div>
-            <div className="text-white/80">Average Response Time</div>
+            <div className="text-4xl font-bold mb-2 text-slate-800">24h</div>
+            <div className="text-slate-700 font-medium">Average Response Time</div>
           </div>
           <div>
-            <div className="text-4xl font-bold mb-2">5+</div>
-            <div className="text-white/80">Years Experience</div>
+            <div className="text-4xl font-bold mb-2 text-slate-800">5+</div>
+            <div className="text-slate-700 font-medium">Years Experience</div>
           </div>
         </div>
       </div>

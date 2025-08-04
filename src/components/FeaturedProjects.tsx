@@ -63,7 +63,7 @@ const FeaturedProjects = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
           {projects.map((project, index) => (
             <div
               key={project.id}
@@ -153,13 +153,14 @@ const FeaturedProjects = () => {
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+                      ))}
+          </div>
 
         {/* Enhanced View All Projects CTA */}
         <div className="text-center">
           <Link to="/portfolio">
-            <Button className="border-2 border-slate-300 hover:border-blue-500 text-slate-700 hover:text-blue-700 bg-white/80 backdrop-blur-sm hover:bg-blue-50 text-lg px-10 py-5 rounded-2xl font-semibold shadow-lg hover:shadow-xl hover:shadow-slate-200 transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-1">
+            <Button className="btn-outline-hero text-blue-700 bg-white/80 backdrop-blur-sm hover:bg-blue-100 text-lg px-10 py-5 rounded-2xl font-semibold shadow-lg hover:shadow-xl hover:shadow-slate-200 transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-1"
+            >
               View All Projects
               <ArrowRight className="ml-3 h-5 w-5" />
             </Button>

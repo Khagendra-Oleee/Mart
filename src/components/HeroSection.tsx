@@ -103,9 +103,9 @@ const HeroSection = () => {
                 src={pythonIcon} 
                 alt="Python" 
                 className="w-full h-full object-contain" 
-              />
-            </div>
-            
+        />
+      </div>
+
             {/* Database/SQL */}
             <div className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-cyan-500/30 rounded-full flex items-center justify-center orbit-icon" style={{ animationDelay: '1.7s' }}>
               <svg className="w-6 h-6 text-cyan-600" viewBox="0 0 24 24" fill="currentColor">
@@ -150,16 +150,17 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-5 sm:gap-8 justify-center items-center animate-[fadeInUp_1s_ease-out_0.6s_both] px-2 sm:px-0">
             <Link to="/contact" className="w-full sm:w-auto">
               <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-base sm:text-lg px-8 sm:px-10 lg:px-12 py-4 sm:py-5 rounded-2xl font-semibold shadow-xl hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-1 group w-full sm:w-auto">
-                Get a Quote
+              Get a Quote
                 <ArrowRight className="ml-3 h-5 sm:h-6 w-5 sm:w-6 group-hover:translate-x-1 transition-transform duration-300" />
-              </Button>
+            </Button>
             </Link>
             
             <Link to="/portfolio" className="w-full sm:w-auto">
-              <Button variant="outline" className="border-2 border-slate-300 hover:border-blue-500 text-slate-700 hover:text-blue-700 bg-white/80 backdrop-blur-sm hover:bg-blue-50 text-base sm:text-lg px-8 sm:px-10 lg:px-12 py-4 sm:py-5 rounded-2xl font-semibold shadow-lg hover:shadow-xl hover:shadow-slate-200 transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-1 group w-full sm:w-auto">
+              <Button variant="outline" className="btn-outline-hero text-blue-700 bg-white/80 backdrop-blur-sm hover:bg-blue-100 text-base sm:text-lg px-8 sm:px-10 lg:px-12 py-4 sm:py-5 rounded-2xl font-semibold shadow-lg hover:shadow-xl hover:shadow-slate-200 transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-1"
+              >
                 <Play className="mr-3 h-5 sm:h-6 w-5 sm:w-6 group-hover:scale-110 transition-transform duration-300" />
-                View Our Work
-              </Button>
+              View Our Work
+            </Button>
             </Link>
           </div>
 

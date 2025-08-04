@@ -1,22 +1,25 @@
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
-import TechStackShowcase from '@/components/TechStackShowcase';
 import FeaturedProjects from '@/components/FeaturedProjects';
+import ValueStack from '@/components/ValueStack';
 import TestimonialsPreview from '@/components/TestimonialsPreview';
 import Footer from '@/components/Footer';
+import PageTransitionSkeleton from '@/components/PageTransitionSkeleton';
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <main>
-        <HeroSection />
-        <TechStackShowcase />
-        <FeaturedProjects />
-        <TestimonialsPreview />
-      </main>
-      <Footer />
-    </div>
+    <PageTransitionSkeleton skeletonType="hero" skeletonCount={1}>
+      <div className="min-h-screen bg-slate-100">
+        <Navigation />
+        <main className="pt-20">
+          <HeroSection />
+          <FeaturedProjects />
+          <ValueStack />
+          <TestimonialsPreview />
+        </main>
+        <Footer />
+      </div>
+    </PageTransitionSkeleton>
   );
 };
 
