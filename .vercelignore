@@ -1,0 +1,12 @@
+# Ignore everything except source files
+node_modules/
+.git/
+.gitignore
+README.md
+*.log
+.env*
+dist/
+coverage/
+.nyc_output/
+.DS_Store
+Thumbs.db 
